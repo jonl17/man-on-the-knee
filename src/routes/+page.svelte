@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Image from '@/cmp/Image.svelte'
 	import ImageSequence from '@/cmp/ImageSequence.svelte'
+	import Input from '@/cmp/Input.svelte'
 	import MouseMonitor from '@/cmp/MouseMonitor.svelte'
 	import { lookingDirection } from '@/store'
 	import type { LookingDirection } from '@/types'

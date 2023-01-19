@@ -4,12 +4,15 @@
 	export let x: number
 	export let y: number
 
-	$: lookingDirection.update(() => {
-		if (x <= window.innerWidth * 0.25) {
-			return 'left'
-		} else if (x >= window.innerWidth * 0.75) {
-			return 'right'
-		} else return 'center'
+	$: lookingDirection.update((value) => {
+		if (value !== 'down') {
+			if (x <= window.innerWidth * 0.25) {
+				return 'left'
+			} else if (x >= window.innerWidth * 0.75) {
+				return 'right'
+			} else return 'center'
+		}
+		return 'down'
 	})
 </script>
 

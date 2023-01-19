@@ -19,7 +19,7 @@
 	lookingDirection.subscribe((value) => (direction = value))
 </script>
 
-<div on:mousemove={handleMouseMove} class="h-screen relative bg-slate-300">
+<div on:mousemove={handleMouseMove} class="h-screen relative">
 	{#if x && y}
 		<MouseMonitor {x} {y} />
 	{/if}

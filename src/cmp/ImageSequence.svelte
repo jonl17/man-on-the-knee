@@ -6,7 +6,30 @@
 	import PantsSleeve from './PantsSleeve.svelte'
 
 	export let direction: LookingDirection = 'center'
+
+	// for preloading images
+	const imageFilenames = [
+		'base-paint.png',
+		'base.png',
+		'head-center-paint.png',
+		'head-center.png',
+		'head-down-paint.png',
+		'head-down.png',
+		'head-left-paint.png',
+		'head-left.png',
+		'head-right-paint.png',
+		'head-right.png',
+		'pants-draggable-part.png',
+		'pants-paint.png',
+		'pants.png'
+	]
 </script>
+
+<svelte:head>
+	{#each imageFilenames as filename}
+		<link rel="preload" as="image" href="/pics/{filename}" />
+	{/each}
+</svelte:head>
 
 <section class="grid place-items-center h-full w-full">
 	<div

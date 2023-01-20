@@ -3,6 +3,7 @@
 	import Image from '@/cmp/Image.svelte'
 	import Input from './Input.svelte'
 	import PantsDraggablePart from './PantsDraggablePart.svelte'
+	import PantsSleeve from './PantsSleeve.svelte'
 
 	export let direction: LookingDirection = 'center'
 </script>
@@ -15,12 +16,20 @@
 		<Image src="/pics/base-paint.png" />
 		<Image src="/pics/base.png" />
 
+		<!-- pants that roll up -->
+		<!-- desktop -->
+		<PantsSleeve clipPercentageRange={{ min: 28, max: 50 }} className="hidden lg:block" />
+		<!-- tablet -->
+		<PantsSleeve clipPercentageRange={{ min: 30, max: 47 }} className="hidden md:block lg:hidden" />
+		<!-- mobile -->
+		<PantsSleeve clipPercentageRange={{ min: 25, max: 48 }} className="block md:hidden" />
+
 		<!-- desktop -->
 		<PantsDraggablePart capX={3} capY={187} className="hidden lg:block" />
 		<!-- tablet -->
 		<PantsDraggablePart capX={3} capY={137} className="hidden md:block lg:hidden" />
 		<!-- mobile -->
-		<PantsDraggablePart capX={2} capY={104} className="block md:hidden" />
+		<PantsDraggablePart capX={2} capY={95} className="block md:hidden" />
 
 		<!-- the head and head paint are conditionally rendered -->
 		{#if direction === 'left'}

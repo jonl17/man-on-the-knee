@@ -16,7 +16,7 @@
 	})
 </script>
 
-<div class="absolute top-3 left-3 h-24 p-3">
+<!-- <div class="absolute top-3 left-3 h-24 p-3">
 	<p>{$lookingDirection}</p>
 	<p>
 		{`x: ${x}`}
@@ -25,4 +25,4 @@
 		{`y: ${y}`}
 	</p>
 	<p>{`pants: ${$pantsDragValue}`}</p>
-</div>
+</div> -->

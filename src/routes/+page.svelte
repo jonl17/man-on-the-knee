@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Image from '@/cmp/Image.svelte'
 	import ImageSequence from '@/cmp/ImageSequence.svelte'
-	import Input from '@/cmp/Input.svelte'
 	import MouseMonitor from '@/cmp/MouseMonitor.svelte'
-	import { lookingDirection } from '@/store'
+	import Sounds from '@/cmp/Sounds.svelte'
+	import { lookingDirection, started } from '@/store'
 	import type { LookingDirection } from '@/types'
+	import cn from 'classnames'
+	import { fade } from 'svelte/transition'
 
 	let x: number
 	let y: number
@@ -24,4 +25,16 @@
 		<MouseMonitor {x} {y} />
 	{/if}
 	<ImageSequence {direction} />
+
+	<Sounds />
 </div>
+
+{#if !$started}
+	<button
+		on:click={() => started.update(() => true)}
+		transition:fade
+		class="h-screen w-full bg-black top-0 left-0 absolute"
+	>
+		<h1 class="text-white text-7xl">start</h1>
+	</button>
+{/if}

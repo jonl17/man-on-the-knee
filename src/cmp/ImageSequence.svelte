@@ -32,9 +32,7 @@
 </svelte:head>
 
 <section class="grid place-items-center h-full w-full">
-	<div
-		class="w-full h-[400px] md:w-[750px] md:h-[700px] lg:w-[1000px] lg:h-[900px] border relative"
-	>
+	<div class="w-full h-[400px] md:w-[750px] md:h-[700px] lg:w-[1000px] lg:h-[900px] relative">
 		<!-- the base body and paint -->
 		<Image src="/pics/base-paint.png" />
 		<Image src="/pics/base.png" />

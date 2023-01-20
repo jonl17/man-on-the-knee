@@ -1,6 +1,5 @@
-<script>
-	import { lookingDirection } from '@/store'
-
+<script type="ts">
+	import { lookingDirection, pantsDragValue } from '@/store'
 	const handleDown = () => lookingDirection.update(() => 'down')
 	const handleUp = () => lookingDirection.update(() => 'center')
 </script>
@@ -8,6 +7,9 @@
 <input
 	on:mousedown={handleDown}
 	on:mouseup={handleUp}
+	bind:value={$pantsDragValue}
 	type="range"
-	class="absolute h-3 w-[120px] md:w-[140px] lg:w-[190px] origin-right rotate-90 bottom-[22%] sm:bottom-[20%] right-[45%] sm:right-[46.2%] md:bottom-[155px] md:right-[290px] lg:bottom-[200px] lg:right-[400px]"
+	min="0"
+	max="10"
+	class="opacity-0 hover:cursor-pointer absolute h-3 w-[120px] origin-right rotate-90 bottom-[23%] right-[45%] sm:right-[46.2%] sm:bottom-[20%] md:bottom-[190px] md:w-[150px] md:right-[335px] lg:w-[200px] lg:bottom-[240px] lg:right-[445px]"
 />

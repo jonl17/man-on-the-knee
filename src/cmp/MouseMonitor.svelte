@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { lookingDirection } from '@/store'
+	import { lookingDirection, pantsDragValue } from '@/store'
 
 	export let x: number
 	export let y: number
 
 	$: lookingDirection.update((value) => {
 		if (value !== 'down') {
-			if (x <= window.innerWidth * 0.25) {
+			if (x <= window.innerWidth * 0.35) {
 				return 'left'
-			} else if (x >= window.innerWidth * 0.75) {
+			} else if (x >= window.innerWidth * 0.65) {
 				return 'right'
 			} else return 'center'
 		}
@@ -24,4 +24,5 @@
 	<p>
 		{`y: ${y}`}
 	</p>
+	<p>{`pants: ${$pantsDragValue}`}</p>
 </div>

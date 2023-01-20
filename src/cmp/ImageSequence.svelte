@@ -37,6 +37,26 @@
 		<Image src="/pics/base-paint.png" />
 		<Image src="/pics/base.png" />
 
+		<!-- the head and head paint are conditionally rendered -->
+		{#if direction === 'left'}
+			<Image src="/pics/head-left-paint.png" />
+			<Image src="/pics/head-left.png" />
+			<Image src="/pics/knee-face-eyes-3.png" />
+		{:else if direction === 'right'}
+			<Image src="/pics/head-right-paint.png" />
+			<Image src="/pics/head-right.png" />
+			<Image src="/pics/knee-face-eyes-2.png" />
+		{:else if direction === 'down'}
+			<Image transitionConfig={{ duration: 300 }} src="/pics/head-down-paint.png" />
+			<Image src="/pics/head-down.png" />
+			<Image src="/pics/knee-face-eyes-closed.png" />
+		{:else}
+			<!-- fallback/default direction is center -->
+			<Image src="/pics/head-center-paint.png" />
+			<Image src="/pics/head-center.png" />
+			<Image src="/pics/knee-face-eyes.png" />
+		{/if}
+
 		<!-- pants that roll up -->
 		<!-- desktop -->
 		<PantsSleeve clipPercentageRange={{ min: 28, max: 50 }} className="hidden lg:block" />
@@ -51,22 +71,6 @@
 		<PantsDraggablePart capX={3} capY={137} className="hidden md:block lg:hidden" />
 		<!-- mobile -->
 		<PantsDraggablePart capX={2} capY={95} className="block md:hidden" />
-
-		<!-- the head and head paint are conditionally rendered -->
-		{#if direction === 'left'}
-			<Image src="/pics/head-left-paint.png" />
-			<Image src="/pics/head-left.png" />
-		{:else if direction === 'right'}
-			<Image src="/pics/head-right-paint.png" />
-			<Image src="/pics/head-right.png" />
-		{:else if direction === 'down'}
-			<Image transitionConfig={{ duration: 300 }} src="/pics/head-down-paint.png" />
-			<Image src="/pics/head-down.png" />
-		{:else}
-			<!-- fallback/default direction is center -->
-			<Image src="/pics/head-center-paint.png" />
-			<Image src="/pics/head-center.png" />
-		{/if}
 
 		<Input />
 	</div>

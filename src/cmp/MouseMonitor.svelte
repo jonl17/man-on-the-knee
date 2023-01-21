@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { lookingDirection, pantsDragValue } from '@/store'
+	import { lookingDirection } from '@/store'
 
 	export let x: number
-	export let y: number
 
 	$: lookingDirection.update((value) => {
 		if (value !== 'down') {
@@ -15,14 +14,3 @@
 		return 'down'
 	})
 </script>
-
-<!-- <div class="absolute top-3 left-3 h-24 p-3">
-	<p>{$lookingDirection}</p>
-	<p>
-		{`x: ${x}`}
-	</p>
-	<p>
-		{`y: ${y}`}
-	</p>
-	<p>{`pants: ${$pantsDragValue}`}</p>
-</div> -->
